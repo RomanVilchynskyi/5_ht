@@ -8,35 +8,103 @@ namespace _08_ht
 {
     struct Vector3d
     {
-        public double X { get; set; }
-        public double Y { get; set; }
-        public double Z { get; set; }
+        private int[,,] arr;
+        private int xSize, ySize, zSize;
 
-        public Vector3d(double x, double y, double z)
+        public Vector3d(int xSize, int ySize, int zSize)
         {
-            X = x;
-            Y = y;
-            Z = z;
+            this.xSize = xSize;
+            this.ySize = ySize;
+            this.zSize = zSize;
+            arr = new int[xSize, ySize, zSize];
         }
 
-        public Vector3d MultByNum(double num)
+        public void FillArray(Func<int, int, int, int> tmp)
         {
-            return new Vector3d(X * num, Y * num, Z * num);
+            for (int x = 0; x < xSize; x++)
+            {
+                for (int y = 0; y < ySize; y++)
+                {
+                    for (int z = 0; z < zSize; z++)
+                    {
+                        arr[x, y, z] = tmp(x, y, z);
+                    }
+                }
+            }
+        }
+
+        public Vector3d MultByNum(int num)
+        {
+            Vector3d res = new Vector3d(xSize, ySize, zSize);
+            for (int x = 0; x < xSize; x++)
+            {
+                for (int y = 0; y < ySize; y++)
+                {
+                    for (int z = 0; z < zSize; z++)
+                    {
+                        res.arr[x, y, z] = arr[x, y, z] * num;
+                    }
+                }
+            }
+            return res;
         }
 
         public Vector3d Add(Vector3d other)
         {
-            return new Vector3d(X + other.X, Y + other.Y, Z + other.Z);
+            if (xSize != other.xSize || ySize != other.ySize || zSize != other.zSize)
+            {
+                throw new ArgumentException("Arrays must be equal");
+            }
+
+            Vector3d res = new Vector3d(xSize, ySize, zSize);
+            for (int x = 0; x < xSize; x++)
+            {
+                for (int y = 0; y < ySize; y++)
+                {
+                    for (int z = 0; z < zSize; z++)
+                    {
+                        res.arr[x, y, z] = arr[x, y, z] + other.arr[x, y, z];
+                    }
+                }
+            }
+            return res;
         }
 
         public Vector3d Sub(Vector3d other)
         {
-            return new Vector3d(X - other.X, Y - other.Y, Z - other.Z);
+            if (xSize != other.xSize || ySize != other.ySize || zSize != other.zSize)
+            {
+                throw new ArgumentException("Arrays must be equal");
+            }
+
+            Vector3d result = new Vector3d(xSize, ySize, zSize);
+            for (int x = 0; x < xSize; x++)
+            {
+                for (int y = 0; y < ySize; y++)
+                {
+                    for (int z = 0; z < zSize; z++)
+                    {
+                        result.arr[x, y, z] = arr[x, y, z] - other.arr[x, y, z];
+                    }
+                }
+            }
+            return result;
         }
 
-        public override string ToString()
+        public void Print()
         {
-            return $"({X}, {Y}, {Z})";
+            for (int x = 0; x < xSize; x++)
+            {
+                for (int y = 0; y < ySize; y++)
+                {
+                    for (int z = 0; z < zSize; z++)
+                    {
+                        Console.Write(arr[x, y, z] + " ");
+                    }
+                    Console.WriteLine();
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
