@@ -122,17 +122,7 @@ class DictionaryApp
             Console.WriteLine("7 Exit");
             Console.Write("Choose an option: ");
 
-            switch (Console.ReadLine())
-            {
-                case "1": AddWord(); break;
-                case "2": ReplaceWord(); break;
-                case "3": ReplaceTranslation(); break;
-                case "4": DeleteWordOrTranslation(); break;
-                case "5": SearchWord(); break;
-                case "6": ExportWord(); break;
-                case "7": SaveDictionary(); return;
-                default: Console.WriteLine("Invalid choice"); break;
-            }
+            
             
         }
     }
