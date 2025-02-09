@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "17_ht", "17_ht\17_ht.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "18_ht", "18_ht\18_ht.csproj", "{922EB3A4-8789-487B-AA08-85C93DD41FB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "С#_final", "С#_final\С#_final.csproj", "{BAC96355-CC18-48FB-BBCF-F403C921283D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "С#_final", "С#_final\С#_final.csproj", "{BAC96355-CC18-48FB-BBCF-F403C921283D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exam", "exam\exam.csproj", "{5D537909-508C-4097-B074-C7902131A7D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{BAC96355-CC18-48FB-BBCF-F403C921283D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAC96355-CC18-48FB-BBCF-F403C921283D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAC96355-CC18-48FB-BBCF-F403C921283D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D537909-508C-4097-B074-C7902131A7D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D537909-508C-4097-B074-C7902131A7D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D537909-508C-4097-B074-C7902131A7D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D537909-508C-4097-B074-C7902131A7D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
